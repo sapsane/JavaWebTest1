@@ -10,7 +10,10 @@ public abstract class basePage {
     protected SelenideElement headerLogo= $("[name='logo-text']");
     protected SelenideElement searchField= $("input#search-input");
 
+    // метод для  поиска по сайту
+    public void  search(String query){searchField.setValue(query).pressEnter(); }
 
+    // другие общие методы, например, для загрузки страницы, аворизации и т.д.
 
 
 }
