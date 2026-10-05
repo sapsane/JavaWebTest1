@@ -10,7 +10,7 @@ public abstract class basePage {
     // Примеры общих элементов, которые могут использоваться на разных страницах
     protected SelenideElement headerLogo= $("a[tsid='toolbar_logo']");
     protected SelenideElement searchField= $("#hook_Block_Header input[name='st.query']");
-    protected SelenideElement vkServices = $("div[data-l='t,vk_ecosystem']")
+    protected SelenideElement vkServices = $("div[data-l='t,vk_ecosystem']");
 
     // метод для  поиска по сайту
     public void  search(String query){
