@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class BaseTest {
 
     //Базовый URL для веб-тестов
-    protected static String baseUrl="https://sn.rv-school.ru";
+    protected static String baseUrl;
 
     @BeforeEach
     public void setUp(){
