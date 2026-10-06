@@ -19,7 +19,7 @@ public class BaseTest {
     public void setUp(){
         baseUrl = determineBaseUrl();
         Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "1400x800";
     }
 
     private static  String determineBaseUrl(){
