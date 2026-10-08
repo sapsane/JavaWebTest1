@@ -57,8 +57,5 @@ public class RecoveryByPhone extends BasePage {
         countryItem.click();
 
         return countryCode;
-
     }
-
-
 }
