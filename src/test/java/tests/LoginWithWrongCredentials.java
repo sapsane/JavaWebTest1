@@ -50,7 +50,7 @@ public class LoginWithWrongCredentials extends BaseTest {
     @Test
     @DisplayName("Пароль без логина")
     public void passwordWithOutLogin() {
-        loginPage.passwordWithoutLogin("incorrectPassword");
+        loginPage.setPassword("incorrectPassword");
 
         // проверка наличия сообщения об ошибке
         assertTrue(loginPage.isErrorMassageVisible(), "Сообщение об ошибке не отображается");
