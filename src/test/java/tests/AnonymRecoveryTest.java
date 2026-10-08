@@ -66,6 +66,7 @@ public class AnonymRecoveryTest extends BaseTest {
 
         recoveryByPhone.clickGetCodeByPhone();
         String expectErrortext = "Неправильный номер телефона.";
+        recoveryByPhone.isErrorMassageTelePhoneVisible();
         String actualErrorMessage= recoveryByPhone.getErrorMassageCodeSMS();
         assertEquals(expectErrortext,actualErrorMessage,"сообщение не совпадает об ошибке номера телефона");
 
