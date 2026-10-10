@@ -1,3 +1,4 @@
+//RecoveryByPhone
 package core.pages;
 
 import com.codeborne.selenide.SelenideElement;
@@ -45,4 +46,16 @@ public class RecoveryByPhone extends BasePage {
         phoneField.shouldBe(visible).setValue(phone);
     }
 
+    @Step("выбираем код страны по названию: {countryName}")
+    public String selectCountryByName(String countryName) {
+        country.shouldBe(visible).click();
+        // находим нужную страну по названию
+        SelenideElement countryItem = $(String.format(".country-select_i[data-name='%s']", countryName));
+        countryItem.scrollTo();
+        //прокручиваем к стране и выбираем ее
+        String countryCode = countryItem.find(".country-select_code").text();
+        countryItem.click();
+
+        return countryCode;
+    }
 }

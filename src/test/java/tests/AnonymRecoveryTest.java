@@ -1,3 +1,4 @@
+//AnonymRecoveryTest
 package tests;
 
 import core.base.BaseTest;
@@ -43,6 +44,7 @@ public class AnonymRecoveryTest extends BaseTest {
     @Test
     @DisplayName("восстановление логина и пароля по номеру телефона")
     public void recoveryByPhoneTest(){
+
         // Попытка входа с некорректными даннами
         loginPage.login("incorrectUser","incorrectPassword");
 
@@ -55,11 +57,19 @@ public class AnonymRecoveryTest extends BaseTest {
         anonymRecoveryPage.goToRecoveryByPhone();
 
         recoveryByPhone = new RecoveryByPhone();
-        recoveryByPhone.enterPhoneNumber("929");
+
+        String countryCode=recoveryByPhone.selectCountryByName("Алжир");
+        String expectCountrycode="+213";
+        assertEquals(expectCountrycode,countryCode,"код страны не совпадает с ожидаемым");
+
+        //recoveryByPhone.enterPhoneNumber("929");
+
         recoveryByPhone.clickGetCodeByPhone();
         String expectErrortext = "Неправильный номер телефона.";
+        recoveryByPhone.isErrorMassageTelePhoneVisible();
         String actualErrorMessage= recoveryByPhone.getErrorMassageCodeSMS();
-        assertEquals(expectErrortext,actualErrorMessage,"сообщение не совпадают об ошибке номера телефона");
+        assertEquals(expectErrortext,actualErrorMessage,"сообщение не совпадает об ошибке номера телефона");
+
     }
 
     @Test
