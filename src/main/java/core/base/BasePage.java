@@ -14,9 +14,10 @@ public abstract class BasePage {
     protected SelenideElement vkServices = $("div[data-l='t,vk_ecosystem']");
 
     @Step("выполняем поиск по сайту с запросом: {query}")
-    public void  search(String query){
+    public void  search1 (String query){
         searchField.shouldBe(visible).setValue(query).pressEnter();
     }
+
 
     @Step("открываем VK Services")
     public void openVkServices(){
